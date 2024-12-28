@@ -6,7 +6,6 @@ import db from "@/utils/db";
 export const POST = async (req: NextRequest) => {
   const requestHeaders = new Headers(req.headers);
   const origin = requestHeaders.get("origin");
-
   const { orderId, cartId } = await req.json();
 
   const order = await db.order.findUnique({
