@@ -11,7 +11,14 @@ const CartItemsList = ({ cartItems }: { cartItems: CartItem[] }) => {
     <div>
       {cartItems.map((cartItem) => {
         const { id, amount } = cartItem;
-        const { id: productId, image, name, company, price } = cartItem.product;
+        const {
+          id: productId,
+          image,
+          name,
+          company,
+          price,
+          // @ts-ignore
+        } = cartItem.product;
         return (
           <Card
             key={id}
